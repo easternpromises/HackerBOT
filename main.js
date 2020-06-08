@@ -40,7 +40,8 @@ client.on("message", (message) => {
     case "hey":
     case "hello":
     case "Hello":
-      message.channel.send("Yooo whats up!").then(message.react("🪂"));
+      // message.channel.send("Yooo whats up!").then(message.react("🪂"));
+      message.reply("Whats up!").then(message.react("🎫"));
       break;
   }
   switch (args[0]) {
@@ -90,7 +91,7 @@ client.on("message", (message) => {
     case "quality":
       message.channel
         .send("https://media.giphy.com/media/10zxDv7Hv5RF9C/giphy.gif")
-        .then(message.react("🐻‍❄️"));
+        .then(message.react("🎫"));
       break;
   }
   switch (args[0]) {
@@ -104,7 +105,7 @@ client.on("message", (message) => {
     case "flomaster":
       message.channel
         .send("https://media.giphy.com/media/QsggDWcGSb4gg4PJDq/giphy.gif")
-        .then(message.react("🐻‍❄️"));
+        .then(message.react("🎫"));
       break;
   }
   switch (args[0]) {
