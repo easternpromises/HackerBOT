@@ -47,7 +47,7 @@ client.on("message", (message) => {
     case "!help":
       message.channel
         .send(
-          "The BOT responds to the following words: Flomaster,\
+          "The BOT responds to the following words: 'Flomaster',\
           'flomaster',\
           'Quality',\
           'quality',\
@@ -65,7 +65,7 @@ client.on("message", (message) => {
           'Hello',\
           'hacker'"
         )
-        .then(message.react("🪂"));
+        .then(message.react("ℹ️"));
       break;
   }
 
@@ -81,6 +81,8 @@ client.on("message", (message) => {
       message.channel.send("What did you say to me?!").then(message.react("😡"));
       message.react("😤");
       message.react("😠");
+      message.react("👺");
+      message.react("🗯️");
       break;
   }
 
@@ -88,7 +90,7 @@ client.on("message", (message) => {
     case "quality":
       message.channel
         .send("https://media.giphy.com/media/10zxDv7Hv5RF9C/giphy.gif")
-        .then(message.react("🦩"));
+        .then(message.react("🐻‍❄️"));
       break;
   }
   switch (args[0]) {
@@ -102,7 +104,7 @@ client.on("message", (message) => {
     case "flomaster":
       message.channel
         .send("https://media.giphy.com/media/QsggDWcGSb4gg4PJDq/giphy.gif")
-        .then(message.react("🪐"));
+        .then(message.react("🐻‍❄️"));
       break;
   }
   switch (args[0]) {
