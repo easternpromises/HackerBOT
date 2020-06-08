@@ -14,6 +14,7 @@ for (const file of commandFiles) {
 
 client.once("ready", () => {
   console.log("STATUS: ONLINE");
+  client.user.setActivity("Matrix", { type: "WATCHING" });
 });
 
 //--- GETS THE COMMANDS FROM A FOLDER CALLED COMMANDS ---//
@@ -61,16 +62,35 @@ client.on("message", (message) => {
   switch (args[0]) {
     case "quality":
       message.channel
-        .send(
-          "Quality is the best developer alive!https://media.giphy.com/media/hrRJ41JB2zlgZiYcCw/giphy.gif"
-        )
+        .send("https://media.giphy.com/media/10zxDv7Hv5RF9C/giphy.gif")
+        .then(message.react("🦩"));
+      break;
+  }
+  switch (args[0]) {
+    case "Quality":
+      message.channel
+        .send("https://media.giphy.com/media/MC6eSuC3yypCU/giphy.gif")
         .then(message.react("🦩"));
       break;
   }
   switch (args[0]) {
     case "flomaster":
       message.channel
-        .send("https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif")
+        .send("https://media.giphy.com/media/QsggDWcGSb4gg4PJDq/giphy.gif")
+        .then(message.react("🪐"));
+      break;
+  }
+  switch (args[0]) {
+    case "Flomaster":
+      message.channel
+        .send("https://media.giphy.com/media/fV0oSDsZ4UgdW/giphy.gif")
+        .then(message.react("🪐"));
+      break;
+  }
+  switch (args[0]) {
+    case "hacker":
+      message.channel
+        .send("https://media.giphy.com/media/sULKEgDMX8LcI/giphy.gif")
         .then(message.react("🪐"));
       break;
   }
