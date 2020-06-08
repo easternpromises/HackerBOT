@@ -47,7 +47,23 @@ client.on("message", (message) => {
     case "!help":
       message.channel
         .send(
-          "Mark responds to the following words: Flomaster, flomaster, Quality, quality, mark, Mark, stfu, mark?, hi, hey, yo, Yo, Hey, Hi, hello, Hello, hacker"
+          "The BOT responds to the following words: Flomaster,\
+          'flomaster',\
+          'Quality',\
+          'quality',\
+          'mark',\
+          'Mark',\
+          'stfu',\
+          'mark?',\
+          'hi',\
+          'hey',\
+          'yo',\
+          'Yo',\
+          'Hey',\
+          'Hi',\
+          'hello',\
+          'Hello',\
+          'hacker'"
         )
         .then(message.react("🪂"));
       break;
