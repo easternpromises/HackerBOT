@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 // const token = "NzE5MzQxNDkwMjk1NDA2NjUy.Xt2Bog.HqaBE5I9rUJJZ3Gl5pObGsO8M4s";
-const PREFIX = "";
+const PREFIX = "!";
 const fs = require("fs");
 
 client.commands = new Discord.Collection();
@@ -18,6 +18,15 @@ client.once("ready", () => {
 });
 
 //--- GETS THE COMMANDS FROM A FOLDER CALLED COMMANDS ---//
+client.on("message", (message) => {
+  if (!message.content.startsWith(PREFIX)) return;
+  let args = message.content.substring(PREFIX.length).split(" ");
+  switch (args[0]) {
+    case "help":
+      client.command.get("help").execute(message, args);
+      break;
+  }
+});
 // client.on("message", (message) => {
 //   if (!message.content.startsWith("yo")) return;
 //   let args = message.content.substring(PREFIX.length).split(" ");
