@@ -50,6 +50,13 @@ client.on("message", (message) => {
       message.channel.send("Yes?");
       break;
   }
+  switch (args[0]) {
+    case "stfu":
+      message.channel.send("What did you say to me?!").then(message.react("😡"));
+      message.react("😤");
+      message.react("😠");
+      break;
+  }
 
   switch (args[0]) {
     case "quality":
