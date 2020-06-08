@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 // const token = "NzE5MzQxNDkwMjk1NDA2NjUy.Xt2Bog.HqaBE5I9rUJJZ3Gl5pObGsO8M4s";
-const PREFIX = "!";
+const PREFIX = "";
 const fs = require("fs");
 
 client.commands = new Discord.Collection();
@@ -17,22 +17,13 @@ client.once("ready", () => {
   client.user.setActivity("Matrix", { type: "WATCHING" });
 });
 
-//--- GETS THE COMMANDS FROM A FOLDER CALLED COMMANDS ---//
-client.on("message", (message) => {
-  if (!message.content.startsWith(PREFIX)) return;
-  let args = message.content.substring(PREFIX.length).split(" ");
-  switch (args[0]) {
-    case "help":
-      client.command.get("help").execute(message, args);
-      break;
-  }
-});
+// //--- GETS THE COMMANDS FROM A FOLDER CALLED COMMANDS ---//
 // client.on("message", (message) => {
-//   if (!message.content.startsWith("yo")) return;
+//   if (!message.content.startsWith(PREFIX)) return;
 //   let args = message.content.substring(PREFIX.length).split(" ");
 //   switch (args[0]) {
-//     case "yo":
-//       client.commands.get("yo").execute(message, args);
+//     case "help":
+//       client.command.get("help").execute(message, args);
 //       break;
 //   }
 // });
@@ -50,6 +41,15 @@ client.on("message", (message) => {
     case "hello":
     case "Hello":
       message.channel.send("Yooo whats up!").then(message.react("🪂"));
+      break;
+  }
+  switch (args[0]) {
+    case "!help":
+      message.channel
+        .send(
+          "Mark responds to the following words: Flomaster, flomaster, Quality, quality, mark, Mark, stfu, mark?, hi, hey, yo, Yo, Hey, Hi, hello, Hello, hacker"
+        )
+        .then(message.react("🪂"));
       break;
   }
 
