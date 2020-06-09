@@ -45,27 +45,16 @@ client.on("message", (message) => {
   }
   switch (args[0]) {
     case "!help":
-      message.channel
-        .send(
-          "The BOT responds to the following words: 'Flomaster',\
-          'flomaster',\
-          'Quality',\
-          'quality',\
-          'mark',\
-          'Mark',\
-          'stfu',\
-          'mark?',\
-          'hi',\
-          'hey',\
-          'yo',\
-          'Yo',\
-          'Hey',\
-          'Hi',\
-          'hello',\
-          'Hello',\
-          'hacker'"
-        )
-        .then(message.react("ℹ️"));
+      message.channel.send("The BOT responds to the following words:").then(message.react("ℹ️"));
+      message.channel.send("flomaster");
+      message.channel.send("Flomaster");
+      message.channel.send("quality");
+      message.channel.send("Quality");
+      message.channel.send("hacker");
+      message.channel.send("Mark");
+      message.channel.send("mark");
+      message.channel.send("stfu");
+      message.channel.send("hi, hey, yo, Yo, Hey, Hi, Hello, hello");
       break;
   }
 
