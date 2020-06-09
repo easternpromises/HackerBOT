@@ -46,14 +46,15 @@ client.on("message", (message) => {
   switch (args[0]) {
     case "!help":
       message.channel.send("The BOT responds to the following words:").then(message.react("ℹ️"));
-      message.channel.send("flomaster");
-      message.channel.send("Flomaster");
-      message.channel.send("quality");
-      message.channel.send("Quality");
-      message.channel.send("hacker");
-      message.channel.send("Mark");
-      message.channel.send("mark");
-      message.channel.send("stfu");
+      message.channel.send("'flomaster'");
+      message.channel.send("'Flomaster'");
+      message.channel.send("'quality'");
+      message.channel.send("'Quality'");
+      message.channel.send("'hacker'");
+      message.channel.send("'Mark'");
+      message.channel.send("'mark'");
+      message.channel.send("'stfu'");
+      message.channel.send("'wyd'");
       message.channel.send("hi, hey, yo, Yo, Hey, Hi, Hello, hello");
       break;
   }
@@ -63,6 +64,11 @@ client.on("message", (message) => {
     case "Mark":
     case "mark":
       message.channel.send("Yes?");
+      break;
+  }
+  switch (args[0]) {
+    case "wyd":
+      message.channel.send("I'm just enjoying the Matrix, you?").then(message.react("💭"));
       break;
   }
   switch (args[0]) {
