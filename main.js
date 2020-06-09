@@ -50,7 +50,7 @@ client.on("message", (message) => {
   //*****************---!help COMMAND---*****************//
   switch (args[0]) {
     case "!help":
-      message.channel.send("The BOT responds to the following commands: ");
+      message.channel.send("I reply to the following commands: ");
       message.channel.send("'flomaster'");
       message.channel.send("'Flomaster'");
       message.channel.send("'quality'");
