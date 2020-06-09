@@ -14,7 +14,7 @@ for (const file of commandFiles) {
 
 client.once("ready", () => {
   console.log("STATUS: ONLINE");
-  client.user.setActivity("Matrix", { type: "WATCHING" });
+  client.user.setActivity("The Matrix", { type: "WATCHING" });
 });
 
 // //--- GETS THE COMMANDS FROM A FOLDER CALLED COMMANDS ---//
