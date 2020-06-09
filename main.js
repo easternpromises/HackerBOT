@@ -40,9 +40,7 @@ client.on("message", (message) => {
     case "hey":
     case "hello":
     case "Hello":
-      // message.channel.send("Yooo whats up!").then(message.react("🪂"));
-      message.reply("whats up").then(message.react("🎫"));
-      message.channel.send("whats up ${member}");
+      message.reply("whats up").then(message.react("🪂"));
       break;
   }
   switch (args[0]) {
