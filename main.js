@@ -19,6 +19,14 @@ client.once("ready", () => {
   client.user.setActivity("The Matrix", { type: "WATCHING" });
 });
 
+//*****************---GREET A NEW MEMBER.---*****************//
+client.once("guildMemberAdd", (member) => {
+  const channel = member.guild.channels.find((channel) => channel.name === "general-chat");
+  if (!channel) return;
+
+  channel.send(`Welcome to The Matrix ${member}`);
+});
+
 // //--- GETS THE COMMANDS FROM A FOLDER CALLED COMMANDS ---//
 // client.on("message", (message) => {
 //   if (!message.content.startsWith(PREFIX)) return;
