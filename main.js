@@ -50,9 +50,7 @@ client.on("message", (message) => {
   //*****************---!help COMMAND---*****************//
   switch (args[0]) {
     case "!help":
-      message.channel
-        .send("The BOT responds to the following commands: ")
-        .then(message.react("ℹ️"));
+      message.channel.send("The BOT responds to the following commands: ");
       message.channel.send("'flomaster'");
       message.channel.send("'Flomaster'");
       message.channel.send("'quality'");
@@ -64,12 +62,12 @@ client.on("message", (message) => {
       message.channel.send("'wyd'");
       message.channel.send("'hey'");
       message.channel.send("'Hey'");
-      message.channel.send("hi");
-      message.channel.send("Hi");
-      message.channel.send("Yo");
-      message.channel.send("yo");
-      message.channel.send("hello");
-      message.channel.send("Hello");
+      message.channel.send("'hi'");
+      message.channel.send("'Hi'");
+      message.channel.send("'Yo'");
+      message.channel.send("'yo'");
+      message.channel.send("'hello'");
+      message.channel.send("'Hello'");
       break;
   }
   //*****************---BOT REPLIES "Yes?" WHEN THESE WORDS ARE MENTIONED IN CHAT---*****************//
@@ -123,6 +121,14 @@ client.on("message", (message) => {
   //*****************---BOT REPLIES WHEN Flomaster IS MENTIONED IN CHAT---*****************//
   switch (args[0]) {
     case "Flomaster":
+      message.channel
+        .send("https://media.giphy.com/media/fV0oSDsZ4UgdW/giphy.gif")
+        .then(message.react("🪐"));
+      break;
+  }
+  //*****************---BOT REPLIES WHEN ok mark IS MENTIONED IN CHAT---*****************//
+  switch (args[0]) {
+    case "ok mark":
       message.channel
         .send("https://media.giphy.com/media/fV0oSDsZ4UgdW/giphy.gif")
         .then(message.react("🪐"));
