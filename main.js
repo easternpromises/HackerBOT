@@ -1,17 +1,19 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-// const token = "NzE5MzQxNDkwMjk1NDA2NjUy.Xt2Bog.HqaBE5I9rUJJZ3Gl5pObGsO8M4s";
 const PREFIX = "";
 const fs = require("fs");
 
+//*****************---NEW DISCORD COLLECTION---*****************//
 client.commands = new Discord.Collection();
-const commandFiles = fs.readdirSync("./commands/").filter((file) => file.endsWith(".js"));
 
+//*****************---GET CODE FROM THE COMMANDS FOLDER(just a cleaner way of having your commands)---*****************//
+const commandFiles = fs.readdirSync("./commands/").filter((file) => file.endsWith(".js"));
 for (const file of commandFiles) {
   const command = require(`./commands/${file}`);
   client.commands.set(command.name, command);
 }
 
+//*****************---WHEN THE BOT IS ONLINE, OUTPUT THIS TEXT.---*****************//
 client.once("ready", () => {
   console.log("STATUS: ONLINE");
   client.user.setActivity("The Matrix", { type: "WATCHING" });
@@ -28,6 +30,7 @@ client.once("ready", () => {
 //   }
 // });
 
+//*****************---BOT REPLIES---*****************//
 client.on("message", (message) => {
   let args = message.content.substring(PREFIX.length).split(" ");
 
@@ -43,9 +46,13 @@ client.on("message", (message) => {
       message.reply("whats up").then(message.react("🪂"));
       break;
   }
+
+  //*****************---!help COMMAND---*****************//
   switch (args[0]) {
     case "!help":
-      message.channel.send("The BOT responds to the following words:").then(message.react("ℹ️"));
+      message.channel
+        .send("The BOT responds to the following commands: ")
+        .then(message.react("ℹ️"));
       message.channel.send("'flomaster'");
       message.channel.send("'Flomaster'");
       message.channel.send("'quality'");
@@ -55,10 +62,17 @@ client.on("message", (message) => {
       message.channel.send("'mark'");
       message.channel.send("'stfu'");
       message.channel.send("'wyd'");
-      message.channel.send("hi, hey, yo, Yo, Hey, Hi, Hello, hello");
+      message.channel.send("'hey'");
+      message.channel.send("'Hey'");
+      message.channel.send("hi");
+      message.channel.send("Hi");
+      message.channel.send("Yo");
+      message.channel.send("yo");
+      message.channel.send("hello");
+      message.channel.send("Hello");
       break;
   }
-
+  //*****************---BOT REPLIES "Yes?" WHEN THESE WORDS ARE MENTIONED IN CHAT---*****************//
   switch (args[0]) {
     case "mark?":
     case "Mark":
@@ -66,11 +80,13 @@ client.on("message", (message) => {
       message.channel.send("Yes?");
       break;
   }
+  //*****************---BOT REPLIES WHEN wyd IS MENTIONED IN CHAT---*****************//
   switch (args[0]) {
     case "wyd":
       message.channel.send("I'm just enjoying the Matrix, you?").then(message.react("💭"));
       break;
   }
+  //*****************---BOT REPLIES WHEN stfu IS MENTIONED IN CHAT---*****************//
   switch (args[0]) {
     case "stfu":
       message.channel.send("What did you say to me?!").then(message.react("😡"));
@@ -80,7 +96,7 @@ client.on("message", (message) => {
       message.react("🗯️");
       break;
   }
-
+  //*****************---BOT REPLIES WHEN quality IS MENTIONED IN CHAT---*****************//
   switch (args[0]) {
     case "quality":
       message.channel
@@ -88,6 +104,7 @@ client.on("message", (message) => {
         .then(message.react("🎫"));
       break;
   }
+  //*****************---BOT REPLIES WHEN Quality IS MENTIONED IN CHAT---*****************//
   switch (args[0]) {
     case "Quality":
       message.channel
@@ -95,6 +112,7 @@ client.on("message", (message) => {
         .then(message.react("🦩"));
       break;
   }
+  //*****************---BOT REPLIES WHEN flomaster IS MENTIONED IN CHAT---*****************//
   switch (args[0]) {
     case "flomaster":
       message.channel
@@ -102,6 +120,7 @@ client.on("message", (message) => {
         .then(message.react("🎫"));
       break;
   }
+  //*****************---BOT REPLIES WHEN Flomaster IS MENTIONED IN CHAT---*****************//
   switch (args[0]) {
     case "Flomaster":
       message.channel
@@ -109,6 +128,7 @@ client.on("message", (message) => {
         .then(message.react("🪐"));
       break;
   }
+  //*****************---BOT REPLIES WHEN hacker IS MENTIONED IN CHAT---*****************//
   switch (args[0]) {
     case "hacker":
       message.channel
@@ -118,4 +138,5 @@ client.on("message", (message) => {
   }
 });
 
+//*****************---LOGIN TO DISCORD W/ HEROKO---*****************//
 client.login(process.env.token);
