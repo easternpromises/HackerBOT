@@ -20,7 +20,7 @@ client.once("ready", () => {
 });
 
 //*****************---GREET A NEW MEMBER.---*****************//
-client.once("guildMemberAdd", (member) => {
+client.on("guildMemberAdd", (member) => {
   const channel = member.guild.channels.find((channel) => channel.name === "general-chat");
   if (!channel) return;
 
