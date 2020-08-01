@@ -1,9 +1,5 @@
 # HackerBOT
-Discord BOT.
 
+This is a dummy repo for my first Discord BOT.
 
-A fully functional Discord bot that had some commands it replies to. 
-
-- author: quality
-- version: v1
 - last update: June, 2020
