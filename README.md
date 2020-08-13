@@ -1,5 +1,5 @@
-# HackerBOT
+# Hacker_BOT
 
 This is a dummy repo for my first Discord BOT.
 
-- last update: June, 2020
+- Last updated on June, 2020.
